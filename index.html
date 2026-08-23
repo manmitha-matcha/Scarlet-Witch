@@ -3,26 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Scarlet Witch</title>
-
+    <title>Scarlet Witch - Chaos Magic VFX</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
     <div class="container">
-
         <video id="video" autoplay playsinline></video>
-
         <canvas id="canvas"></canvas>
-
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+    <!-- Premium Loading Screen -->
+    <div id="loading-screen" class="loading-container">
+        <div class="loading-content">
+            <div class="magic-loader">
+                <div class="loader-ring"></div>
+                <div class="loader-ring inner"></div>
+                <div class="loader-core"></div>
+            </div>
+            <h1 class="loading-title">AWAKENING CHAOS MAGIC</h1>
+            <p class="loading-subtitle">Initializing camera & neural tracking models...</p>
+        </div>
+    </div>
 
-    <script src="script.js"></script>
+    <!-- MediaPipe Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/holistic/holistic.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
 
+    <script src="script.js?v=3"></script>
 </body>
 </html>

@@ -17,7 +17,6 @@ body {
 
 .container {
     position: relative;
-
     width: 100vw;
     height: 100vh;
 }
@@ -25,15 +24,116 @@ body {
 #video,
 #canvas {
     position: absolute;
-
     inset: 0;
-
     width: 100%;
     height: 100%;
-
     object-fit: cover;
 }
 
 #canvas {
     pointer-events: none;
+}
+
+/* Premium Loading Container */
+.loading-container {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: radial-gradient(circle at center, #1a0004 0%, #000000 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.loading-container.fade-out {
+    opacity: 0;
+}
+
+.loading-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Chaos Magic Loader Graphic */
+.magic-loader {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin-bottom: 30px;
+}
+
+.loader-ring {
+    position: absolute;
+    inset: 0;
+    border: 2px solid transparent;
+    border-top: 2px solid #ff1a40;
+    border-bottom: 2px solid #800015;
+    border-radius: 50%;
+    animation: spin 3s linear infinite;
+    filter: drop-shadow(0 0 15px #ff1a40);
+}
+
+.loader-ring.inner {
+    inset: 15px;
+    border-top: 1.5px solid transparent;
+    border-left: 1.5px solid #ffebf0;
+    border-right: 1.5px solid #ff1a40;
+    animation: spin-reverse 2s linear infinite;
+}
+
+.loader-core {
+    position: absolute;
+    inset: 45px;
+    background: radial-gradient(circle, #ffebf0 0%, #ff1a40 50%, #800015 100%);
+    border-radius: 50%;
+    box-shadow: 0 0 30px #ff1a40, 0 0 60px #800015;
+    animation: pulse 1.5s ease-in-out infinite alternate;
+}
+
+/* Animations */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes spin-reverse {
+    0% { transform: rotate(360deg); }
+    100% { transform: rotate(0deg); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(0.85); opacity: 0.7; }
+    100% { transform: scale(1.15); opacity: 1; }
+}
+
+/* Loading Typography */
+.loading-title {
+    font-family: 'Cinzel', serif;
+    font-size: 2.2rem;
+    letter-spacing: 6px;
+    font-weight: 900;
+    background: linear-gradient(to right, #ffebf0, #ff1a40, #ffebf0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 12px;
+    text-shadow: 0 0 20px rgba(255, 26, 64, 0.4);
+    animation: glow-pulse 3s infinite alternate;
+}
+
+.loading-subtitle {
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    color: #cc8892;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+@keyframes glow-pulse {
+    0% { filter: drop-shadow(0 0 2px rgba(255, 26, 64, 0.2)); }
+    100% { filter: drop-shadow(0 0 15px rgba(255, 26, 64, 0.6)); }
 }
