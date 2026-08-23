@@ -69,7 +69,14 @@ scarlet-magic/
 
 ## How to Run Locally
 
-### 1. Serve Files
+### 1. Clone the Repository
+First, clone this repository to your local machine:
+```bash
+git clone https://github.com/manmitha-matcha/Scarlet-Witch.git
+cd Scarlet-Witch
+```
+
+### 2. Serve Files
 Since MediaPipe dynamically loads WASM assets and requires camera permissions, the page must be served over a local server (`localhost`) or HTTPS. 
 
 You can use any local server utility. For example, using Node.js:
@@ -81,7 +88,7 @@ Or using Python:
 python -m http.server 8085
 ```
 
-### 2. Access in Browser
+### 3. Access in Browser
 Open your browser and navigate to:
 **`http://localhost:8085`**
 
